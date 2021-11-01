@@ -10,7 +10,7 @@ class AbstractApiClient:
         self.__api_key = api_key
         self.__client = requests.Session()
 
-    #
+    #пропертя додає до недерів апі-ключ який бере з файла сеттінгс
     @property
     def headers_with_api(self):
         headers = {
@@ -20,16 +20,19 @@ class AbstractApiClient:
         headers.update({"api_key": api_key})
         return headers
 
+    # оголошуємо метод який виконуватиме get запити
     def _get(self, endpoint, param):
         url = f"{base_url}/{endpoint}/{param}"
         res = self.__client.get(url, headers = self.headers_with_api)
         return res
 
+    # оголошуємо метод який виконуватиме delete запити
     def _delete(self, endpoint, param):
         url = f"{base_url}/{endpoint}/{param}"
         res = self.__client.delete(url, headers = self.headers_with_api)
         return res
 
+    # оголошуємо метод який виконуватиме post запити
     def _post(self, endpoint, payload, param = None ):
         if param:
             url = f"{base_url}/{endpoint}/{param}"
@@ -38,6 +41,7 @@ class AbstractApiClient:
         res = self.__client.post(url, headers = self.headers_with_api, json = payload)
         return res
 
+    # оголошуємо метод який виконуватиме put запити
     def _put(self, endpoint, payload, param = None ):
         if param:
             url = f"{base_url}/{endpoint}/{param}"
