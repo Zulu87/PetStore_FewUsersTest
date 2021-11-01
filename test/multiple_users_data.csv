@@ -1,0 +1,4 @@
+id,username,firstName,lastName,email,password,phone,userStatus
+213213236,lolik,John,Doe,john.doe@mm.com,test1,1234567,0
+232434534,bolik,Joe,Dove,joe.dove@mm.com,test2,2345678,0
+678776666,rexio,Jim,Bim,jim.bim@mm.com,test3,3456789,0
