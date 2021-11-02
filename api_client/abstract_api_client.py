@@ -52,7 +52,3 @@ class AbstractApiClient:
 
     def __del__(self):
         self.__client.close()
-
-
-print(base_url)
-print(api_key)
