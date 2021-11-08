@@ -1,11 +1,11 @@
 import pytest
 import csv
-from api_client.user_client import CurrentUserClient
+from api_client.user_client import UserClient
 
 
 @pytest.fixture(scope="session")
 def current_user_client(request):
-    api_client = CurrentUserClient()
+    api_client = UserClient()
     yield api_client
     del api_client
 
